@@ -47,6 +47,7 @@ body {
 }
 .header-nav-link:hover {
   background-color: #1f52a4;
+  transition: 0.5s all;
 }
 .main-content {
   margin: 20px 0;
@@ -109,11 +110,12 @@ body {
 .post-image-link {
   display: flex;
   flex-shrink: 0;
-  flex-basis: 50%;
+  flex-basis: calc(50%-2px);
   height: 350px;
 }
 .post-image-link:hover {
   opacity: 0.7;
+  transition: 0.5s all;
 }
 .post-image {
   width: 100%;
@@ -127,6 +129,7 @@ body {
 }
 .post-info:hover .post-info-title {
   color: rgba(255, 255, 255, 0.5);
+  transition: 0.5s all;
 }
 .post-info-wrap {
   padding: 30px;
