@@ -135,7 +135,6 @@ body {
   margin: 0;
   font-weight: 100;
   font-size: 48px;
-  word-break: break-word;
 }
 .post-info-desc {
   color: rgba(255, 255, 255, 0.5);
@@ -195,10 +194,10 @@ body {
 }
 @media (max-width: 1400px) {
   body {
-    font-size: calc( (100vw - 768px)/(1400 - 768) * 4 + 14px);
+    font-size: calc(10px + 4 * ((100vw - 320px) / 768));
   }
   .post-0-title {
-    font-size: calc( (100vw - 768px)/(1400 - 768) * 4 + 32px);
+    font-size: calc(32px + 4 * ((100vw - 320px) / 768));
   }
   .post-image-link {
     height: 320px;
@@ -207,7 +206,7 @@ body {
     padding: 15px;
   }
   .post-info-title {
-    font-size: calc( (100vw - 768px)/(1400 - 768) * 4 + 32px);
+    font-size: calc(32px + 4 * ((100vw - 320px) / 768));
   }
   .post-info-desc {
     line-height: 16px;
@@ -216,16 +215,16 @@ body {
     padding: 5px;
   }
   .post-date-day {
-    font-size: calc( (100vw - 768px)/(1400 - 768) * 4 + 40px);
+    font-size: calc(40px + 4 * ((100vw - 320px) / 768));
   }
   .post-date-month {
-    font-size: calc( (100vw - 768px)/(1400 - 768) * 4 + 22px);
+    font-size: calc(22px + 4 * ((100vw - 320px) / 768));
   }
   .news-info {
     padding: 25px 40px 25px 30px;
   }
   .news-info-title {
-    font-size: calc( (100vw - 768px)/(1400 - 768) * 4 + 26px);
+    font-size: calc(26px + 4 * ((100vw - 320px) / 768));
   }
 }
 @media (max-width: 768px) {
@@ -353,9 +352,6 @@ body {
   }
   .post-image-link {
     height: 300px;
-  }
-  .post-info-title {
-    font-size: 48px;
   }
   .news-image {
     height: 300px;
