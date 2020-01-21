@@ -7,7 +7,7 @@ function Fighter(initialFighterProperties) {
 	let losses = 0;
 	const randomRate = 101;
 
-	this.setHealth = function(hp) {
+	const setHealth = function(hp) {
 		fighter.hp = hp;
 	}
 
@@ -29,7 +29,7 @@ function Fighter(initialFighterProperties) {
 	this.attack = function(fighter) {
 		const attackChance = Math.floor(Math.random() * randomRate);
 		if (attackChance > fighter.getStrength() + fighter.getAgility()) {
-			fighter.setHealth(fighter.getHealth() - this.getDamage());
+			fighter.dealDamage(this.getDamage());
 			console.log(`${this.getName()} makes ${this.getDamage()} damage to ${fighter.getName()}`);
 		} else {
 			console.log(`${this.getName()} attack missed`);
@@ -39,15 +39,15 @@ function Fighter(initialFighterProperties) {
 		console.log(`Name: ${this.getName()}, Wins: ${wins}, Losses: ${losses}`);
 	}
 	this.heal = function(hp) {
-		this.setHealth(this.getHealth() + hp);
+		setHealth(this.getHealth() + hp);
 		if (this.getHealth() > maxHP) {
-			this.setHealth(maxHP);
+			setHealth(maxHP);
 		}
 	}
 	this.dealDamage = function(hp) {
-		this.setHealth(this.getHealth() - hp);
+		setHealth(this.getHealth() - hp);
 		if (this.getHealth() < 0) {
-			this.setHealth(0);
+			setHealth(0);
 		}
 	}
 	this.addWin = function() {
@@ -78,7 +78,6 @@ function battle(fighter1, fighter2) {
 				console.log(`${fighter1.getName()} has won!`);
 				fighter1.addWin();
 				fighter2.addLoss();
-				fighter2.setHealth(0);
 			} else {
 				fighter2.attack(fighter1);
 			}
@@ -86,7 +85,6 @@ function battle(fighter1, fighter2) {
 				console.log(`${fighter2.getName()} has won!`);
 				fighter2.addWin();
 				fighter1.addLoss();
-				fighter1.setHealth(0);
 			}
 		}
 	}
