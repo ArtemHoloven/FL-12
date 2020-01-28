@@ -17,7 +17,7 @@
   float: none;
 }
 
-.setCompleted > .set {
+.setMarked > .set {
   background-color: lime;
   opacity: 0.3;
 }
