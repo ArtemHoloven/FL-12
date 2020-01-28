@@ -7,7 +7,7 @@ const mainContent = document.createElement('div');
 const mainContentActual = document.createElement('div');
 const mainContentCompleted = document.createElement('div');
 mainAddSetBtn.textContent = 'Add new';
-mainContentCompleted.classList.add('setCompleted');
+mainContentCompleted.classList.add('setMarked');
 mainContent.append(mainContentActual, mainContentCompleted);
 main.append(mainAddSetBtn, mainContent);
 root.append(main);
