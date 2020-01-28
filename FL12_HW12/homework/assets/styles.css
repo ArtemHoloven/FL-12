@@ -1,0 +1,35 @@
+#root {
+  max-width: 500px;
+}
+
+.set {
+  margin: 15px;
+  border: 1px solid black;
+  color: blue;
+}
+
+.set > button {
+  float: right;
+}
+
+.set > button:first-of-type {
+  margin-right: 10px;
+  float: none;
+}
+
+.setCompleted > .set {
+  background-color: lime;
+  opacity: 0.3;
+}
+
+.termContainer {
+  border: 1px solid teal;
+  margin: 4px;
+}
+
+.termContent {
+  display: inline-block;
+  color: black;
+  width: 30%;
+  margin: 2px;
+}
