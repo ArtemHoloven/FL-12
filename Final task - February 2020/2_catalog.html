@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Catalog</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header_top">
+				<h1 class="header_top_logo_tm">Template</h1>
+				<h2 class="header_top_logo_tm_mobile">TL</h2>
+				<div class="header_top_login_bag">
+					<span class="header_top_login">E-mail sign up</span>
+					<img class="header_top_bag_img" src="img/bag.png" alt="bag_img">
+					<a href="4_shopping_bag.html" id="header_top_bag">Bag <span id="bag_total_price"></span> (<span id="bag_total_items">0</span>)</a>
+					<img id="header_menu_icon" src="img/menu_icon.png" alt="menu_img">
+					<img id="header_menu_icon_close" src="img/menu_icon_close.png" alt="menu_close_img">
+				</div>
+			</div>
+			<div id="header_menu">
+				<nav class="header_nav">
+					<a class="header_nav_link active" href="#">Women</a>
+					<a class="header_nav_link" href="#">Men</a>
+					<a class="header_nav_link" href="#">Handbags</a>
+					<a class="header_nav_link" href="#">Accessories</a>
+					<a class="header_nav_link" href="#">Sale</a>
+					<a class="header_nav_link" href="#">New Arrivals</a>
+					<a class="header_nav_link" href="#">Clearance</a>
+					<a class="header_nav_link" href="#">Store Locator</a>
+				</nav>
+				<form class="header_search">
+					<input id="header_input_search" type="text" name="search" placeholder="Style Name">
+					<label id="header_button" for="header_input_search"><img src="img/icon.png" alt="icon_search_img"></label>
+				</form>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<div class="border_separator"></div>
+			<div class="container">
+				<div class="drop_list_wrapper">
+					<div class="drop_list">
+						<button type="button" class="drop_btn drop_btn_selected" id="drop_btn_fashion"><span class="drop_list_title">Fashion</span><span class="drop_list_item_picked" id="fashion_picked">Casual style</span></button>
+						<ul class="drop_list_content">
+							<li class="drop_list_item fashion_item">Not selected</li>
+							<li class="drop_list_item fashion_item">Nail the 90s</li>
+							<li class="drop_list_item fashion_item">Casual style</li>
+							<li class="drop_list_item fashion_item">New Look</li>
+							<li class="drop_list_item fashion_item">Sport</li>
+							<li class="drop_list_item fashion_item">Vintage</li>
+							<li class="drop_list_item fashion_item">Classical style</li>
+						</ul>
+					</div>
+					<div class="drop_list">
+						<button type="button" class="drop_btn drop_btn_not_selected" id="drop_btn_product_type"><span class="drop_list_title">Product type</span><span class="drop_list_item_picked" id="product_type_picked"></span></button>
+						<ul class="drop_list_content">
+							<li class="drop_list_item product_type_item">Not selected</li>
+							<li class="drop_list_item product_type_item">Coats & Jackets</li>
+							<li class="drop_list_item product_type_item">Dresses</li>
+							<li class="drop_list_item product_type_item">Jersey Tops</li>
+						</ul>
+					</div>
+					<div class="drop_list">
+						<button type="button" class="drop_btn drop_btn_not_selected" id="drop_btn_color"><span class="drop_list_title">Color</span><span class="drop_list_item_picked" id="color_picked"></span></button>
+						<ul class="drop_list_content">
+							<li class="drop_list_item color_item">Not selected</li>
+							<li class="drop_list_item color_item">Black</li>
+							<li class="drop_list_item color_item">Blue</li>
+							<li class="drop_list_item color_item">Red</li>
+							<li class="drop_list_item color_item">Green</li>
+							<li class="drop_list_item color_item">Golden</li>
+						</ul>
+					</div>
+					<div class="drop_list">
+						<button type="button" class="drop_btn drop_btn_selected" id="drop_btn_brand"><span class="drop_list_title">Brand</span><span class="drop_list_item_picked" id="brand_picked">Antipodium</span></button>
+						<ul class="drop_list_content">
+							<li class="drop_list_item brand_item">Not selected</li>
+							<li class="drop_list_item brand_item">Chi Chi London</li>
+							<li class="drop_list_item brand_item">Antipodium</li>
+							<li class="drop_list_item brand_item">Adidas</li>
+							<li class="drop_list_item brand_item">New Balance</li>
+							<li class="drop_list_item brand_item">River Island</li>
+						</ul>
+					</div>
+					<div class="drop_list">
+						<button type="button" class="drop_btn drop_btn_selected" id="drop_btn_size"><span class="drop_list_title">Size</span><span class="drop_list_item_picked" id="size_picked">UK 18</span></button>
+						<ul class="drop_list_content">
+							<li class="drop_list_item size_item">Not selected</li>
+							<li class="drop_list_item size_item">UK 2</li>
+							<li class="drop_list_item size_item">UK 18</li>
+							<li class="drop_list_item size_item">UK 18L</li>
+							<li class="drop_list_item size_item">UK 20</li>
+							<li class="drop_list_item size_item">UK 20L</li>
+							<li class="drop_list_item size_item">UK 20S</li>
+							<li class="drop_list_item size_item">UK 22S</li>
+							<li class="drop_list_item size_item">UK 22</li>
+						</ul>
+					</div>
+					<div class="drop_list">
+						<button type="button" class="drop_btn drop_btn_not_selected" id="drop_btn_price"><span class="drop_list_title">Price range</span><span class="drop_list_item_picked" id="price_picked"></span></button>
+						<ul class="drop_list_content">
+							<li class="drop_list_item price_item">Not selected</li>
+							<li class="drop_list_item price_item">To £99</li>
+							<li class="drop_list_item price_item">£100-£299</li>
+							<li class="drop_list_item price_item">From £300</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<div class="border_separator"></div>
+		<div class="container">
+			<div class="section_catalog">
+				<div id="section_catalog_items_wrapper">
+				</div>
+				<button type="button" id="section_catalog_button">Show more</button>
+			</div>
+		</div>
+		<div class="border_separator"></div>
+		<div class="article_catalog_banners">
+			<a class="article_catalog_banner_left" href="#">
+				<div class="article_catalog_banner_left_info">
+					<span class="article_catalog_banner_left_title">Adidas Blue</span>
+					<span class="article_catalog_banner_left_desc">For men</span>
+				</div>
+			</a>
+			<a class="article_catalog_banner_middle" href="#">
+				<div class="article_catalog_banner_middle_info">
+					<span class="article_catalog_banner_middle_title">Repair Patches</span>
+					<span class="article_catalog_banner_middle_desc">£ 150.50</span>
+				</div>
+			</a>
+			<a class="article_catalog_banner_right" href="#">
+				<div class="article_catalog_banner_right_info">
+					<span class="article_catalog_banner_right_title">Sale</span>
+					<span class="article_catalog_banner_right_desc">-70%</span>
+				</div>
+			</a>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="border_separator"></div>
+		<div class="container">
+			<div class="footer_top">
+				<div class="footer_top_left">
+					<div class="footer_top_left_left">
+						<h4 class="footer_top_left_title">Quick Links</h4>
+						<a class="footer_top_left_link" href="#">Store locator</a>
+						<a class="footer_top_left_link" href="#">Gift cards</a>
+						<a class="footer_top_left_link" href="#">Size guide</a>
+						<a class="footer_top_left_link" href="#">About us</a>
+						<a class="footer_top_left_link" href="#">Support</a>
+					</div>
+					<div class="footer_top_left_right">
+						<h4 class="footer_top_left_title">Customer Care</h4>
+						<a class="footer_top_left_link" href="#">Customer service</a>
+						<a class="footer_top_left_link" href="#">Track my order</a>
+						<a class="footer_top_left_link" href="#">Return policy</a>
+						<a class="footer_top_left_link" href="#">Shipping & delivery</a>
+						<a class="footer_top_left_link" href="#">Contact us</a>
+						<a class="footer_top_left_link" href="#">Careers</a>
+					</div>
+				</div>
+				<div class="footer_top_right">
+					<div class="footer_top_right_top">
+						<div class="footer_top_right_top_left">
+							<h4 class="footer_top_right_title">Questions</h4>
+							<p class="footer_top_right_desc"><img src="img/twitter_grey.png" alt="twitter_logo"> Tweet us <span class="footer_top_right_top_left_span">@template</span></p>
+						</div>
+						<div class="footer_top_right_top_right">
+							<h4 class="footer_top_right_title">Order by phone</h4>
+							<p class="footer_top_right_desc">8-800-409-47-12</p>
+						</div>
+					</div>
+					<div class="footer_top_right_bottom">
+						<p class="footer_top_right_bottom_desc">We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.</p>
+						<a href="#"><img class="footer_top_right_bottom_facebook" src="img/facebook.png" alt="facebook_logo"></a>
+						<a href="#"><img class="footer_top_right_bottom_twitter" src="img/twitter_blue.png" alt="twitter_logo"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="border_separator"></div>
+		<div class="container">
+			<div class="footer_bottom">
+				<p class="footer_bottom_left">&copy; 2010-2015, The Template Group Inc.</p>
+				<p class="footer_bottom_middle">Share <span id="footer_bottom_middle_span">1 437</span></p>
+				<div class="footer_bottom_right">
+					<a class="footer_bottom_link" href="#">Legal notice</a>
+					<a class="footer_bottom_link" href="#">Privacy policy</a>
+					<a class="footer_bottom_link" href="#">Site map</a>
+				</div>
+				<div class="footer_bottom_right_mobile">
+					<a href="#"><img class="footer_top_right_bottom_facebook" src="img/facebook.png" alt="facebook_logo"></a>
+					<a href="#"><img class="footer_top_right_bottom_twitter" src="img/twitter_blue.png" alt="twitter_logo"></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="data/best-offer.js"></script>
+	<script src="data/catalog.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/catalog.js"></script>
+</body>
+</html>
