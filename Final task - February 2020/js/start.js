@@ -11,7 +11,11 @@ function fillBestOfferSection(leftItem, rightItem) {
   var bestOfferFirstItem = document.createElement('div');
   bestOfferFirstItem.classList.add('section_catalog_item');
   bestOfferFirstItemWrapper.appendChild(bestOfferFirstItem);
-  bestOfferFirstItem.addEventListener('click', toItemDetailsPage);
+  bestOfferFirstItem.addEventListener('click', function() {
+    tempId = catalog[leftItem].id;
+    sessionStorage.setItem('id', tempId);
+    toItemDetailsPage();
+  });
   var bestOfferFirstItemImgWrapper = document.createElement('div');
   bestOfferFirstItemImgWrapper.classList.add('section_catalog_item_image_wrapper');
   bestOfferFirstItem.appendChild(bestOfferFirstItemImgWrapper);
@@ -66,7 +70,11 @@ function fillBestOfferSection(leftItem, rightItem) {
   var bestOfferSecondItem = document.createElement('div');
   bestOfferSecondItem.classList.add('section_catalog_item');
   bestOfferSecondItemWrapper.appendChild(bestOfferSecondItem);
-  bestOfferSecondItem.addEventListener('click', toItemDetailsPage);
+  bestOfferSecondItem.addEventListener('click', function() {
+    tempId = catalog[rightItem].id;
+    sessionStorage.setItem('id', tempId);
+    toItemDetailsPage();
+  });
   var bestOfferSecondItemImgWrapper = document.createElement('div');
   bestOfferSecondItemImgWrapper.classList.add('section_catalog_item_image_wrapper');
   bestOfferSecondItem.appendChild(bestOfferSecondItemImgWrapper);
@@ -127,12 +135,132 @@ function fillBestOfferSection(leftItem, rightItem) {
   bestOfferButtonAddDesktop.id = 'section_best_offer_button_add_desc';
   bestOfferButtonAddDesktop.innerHTML = 'Add to bag';
   bestOfferResult.appendChild(bestOfferButtonAddDesktop);
-  bestOfferButtonAddDesktop.addEventListener('click', addToBag);
+  bestOfferButtonAddDesktop.addEventListener('click', function() {
+    if (sessionStorage.bag !== undefined) {
+      tempBag = JSON.parse(sessionStorage.getItem('bag'));
+    }
+    catalog[leftItem].quantity = 1;
+    catalog[rightItem].quantity = 1;
+    if (catalog[leftItem] === catalog[rightItem]) {
+      catalog[leftItem].sizes = catalog[leftItem].sizes[0];
+      catalog[leftItem].colors = catalog[leftItem].colors[0];
+      catalog[leftItem].quantity = 2;
+      var zero = 0;
+      for (var i = 0; i < tempBag.length; i++) {
+        if (catalog[leftItem].id === tempBag[i].id && catalog[leftItem].colors === tempBag[i].colors && catalog[leftItem].sizes === tempBag[i].sizes) {
+          tempBag[i].quantity += catalog[leftItem].quantity;
+        } else {
+          zero++;
+        }
+      }
+      if (zero === tempBag.length) {
+        tempBag.push(catalog[leftItem]);
+      } 
+    } else {
+      catalog[leftItem].sizes = catalog[leftItem].sizes[0];
+      catalog[leftItem].colors = catalog[leftItem].colors[0];
+      catalog[rightItem].sizes = catalog[rightItem].sizes[0];
+      catalog[rightItem].colors = catalog[rightItem].colors[0];
+      var zero = 0;
+      for (var i = 0; i < tempBag.length; i++) {
+        if (catalog[leftItem].id === tempBag[i].id && catalog[leftItem].colors === tempBag[i].colors && catalog[leftItem].sizes === tempBag[i].sizes) {
+          tempBag[i].quantity += catalog[leftItem].quantity;
+        } else {
+          zero++;
+        }
+      }
+      if (zero === tempBag.length) {
+        tempBag.push(catalog[leftItem]);
+      }
+      zero = 0;
+      for (var i = 0; i < tempBag.length; i++) {
+        if (catalog[rightItem].id === tempBag[i].id && catalog[rightItem].colors === tempBag[i].colors && catalog[rightItem].sizes === tempBag[i].sizes) {
+          tempBag[i].quantity += catalog[rightItem].quantity;
+        } else {
+          zero++;
+        }
+      }
+      if (zero === tempBag.length) {
+        tempBag.push(catalog[rightItem]);
+      }
+    }
+    sessionStorage.setItem('bag', JSON.stringify(tempBag));
+    bagTotalItems += 2;
+    sessionStorage.setItem('items', bagTotalItems);
+    bagTotalPrice += catalog[leftItem].discountedPrice + catalog[rightItem].discountedPrice;
+    sessionStorage.setItem('price', bagTotalPrice);
+    totalPriceSpan.innerHTML = '£' + bagTotalPrice.toFixed(2);
+    if (bagTotalPrice === 0) {
+      totalPriceSpan.innerHTML = '';
+    }
+    totalItemsSpan.innerHTML = bagTotalItems;
+    addToBag();
+  });
   var bestOfferButtonAddTabletMobile = document.createElement('button');
   bestOfferButtonAddTabletMobile.id = 'section_best_offer_button_add_tm';
   bestOfferButtonAddTabletMobile.innerHTML = 'Add to bag';
   bestOfferSection.appendChild(bestOfferButtonAddTabletMobile);
-  bestOfferButtonAddTabletMobile.addEventListener('click', addToBag);
+  bestOfferButtonAddTabletMobile.addEventListener('click', function() {
+    if (sessionStorage.bag !== undefined) {
+      tempBag = JSON.parse(sessionStorage.getItem('bag'));
+    }
+    catalog[leftItem].quantity = 1;
+    catalog[rightItem].quantity = 1;
+    if (catalog[leftItem] === catalog[rightItem]) {
+      catalog[leftItem].sizes = catalog[leftItem].sizes[0];
+      catalog[leftItem].colors = catalog[leftItem].colors[0];
+      catalog[leftItem].quantity = 2;
+      var zero = 0;
+      for (var i = 0; i < tempBag.length; i++) {
+        if (catalog[leftItem].id === tempBag[i].id && catalog[leftItem].colors === tempBag[i].colors && catalog[leftItem].sizes === tempBag[i].sizes) {
+          tempBag[i].quantity += catalog[leftItem].quantity;
+        } else {
+          zero++;
+        }
+      }
+      if (zero === tempBag.length) {
+        tempBag.push(catalog[leftItem]);
+      } 
+    } else {
+      catalog[leftItem].sizes = catalog[leftItem].sizes[0];
+      catalog[leftItem].colors = catalog[leftItem].colors[0];
+      catalog[rightItem].sizes = catalog[rightItem].sizes[0];
+      catalog[rightItem].colors = catalog[rightItem].colors[0];
+      var zero = 0;
+      for (var i = 0; i < tempBag.length; i++) {
+        if (catalog[leftItem].id === tempBag[i].id && catalog[leftItem].colors === tempBag[i].colors && catalog[leftItem].sizes === tempBag[i].sizes) {
+          tempBag[i].quantity += catalog[leftItem].quantity;
+        } else {
+          zero++;
+        }
+      }
+      if (zero === tempBag.length) {
+        tempBag.push(catalog[leftItem]);
+      }
+      zero = 0;
+      for (var i = 0; i < tempBag.length; i++) {
+        if (catalog[rightItem].id === tempBag[i].id && catalog[rightItem].colors === tempBag[i].colors && catalog[rightItem].sizes === tempBag[i].sizes) {
+          tempBag[i].quantity += catalog[rightItem].quantity;
+        } else {
+          zero++;
+        }
+      }
+      if (zero === tempBag.length) {
+        tempBag.push(catalog[rightItem]);
+      }
+    }
+    sessionStorage.setItem('bag', JSON.stringify(tempBag));
+    bagTotalItems += 2;
+    sessionStorage.setItem('items', bagTotalItems);
+    bagTotalPrice += catalog[leftItem].discountedPrice + catalog[rightItem].discountedPrice;
+    sessionStorage.setItem('price', bagTotalPrice);
+    totalPriceSpan.innerHTML = '£' + bagTotalPrice.toFixed(2);
+    if (bagTotalPrice === 0) {
+      totalPriceSpan.innerHTML = '';
+    }
+    totalItemsSpan.innerHTML = bagTotalItems;
+    addToBag();
+  });
   bestOfferFirstItemButtonUp.addEventListener('click', function () {
     leftItem++;
 
@@ -217,9 +345,6 @@ function fillBestOfferSection(leftItem, rightItem) {
   }
 
   function calculateTotalPrice() {
-    console.log(catalog[leftItem].id === bestOffer.left[0] || catalog[leftItem].id === bestOffer.left[1] || catalog[leftItem].id === bestOffer.left[2]);
-    console.log(catalog[rightItem].id === bestOffer.right[0] || catalog[rightItem].id === bestOffer.right[1]);
-
     if ((catalog[leftItem].id === bestOffer.left[0] || catalog[leftItem].id === bestOffer.left[1] || catalog[leftItem].id === bestOffer.left[2]) && (catalog[rightItem].id === bestOffer.right[0] || catalog[rightItem].id === bestOffer.right[1])) {
       bestOfferSumWithDiscount.innerHTML = '£' + (catalog[leftItem].discountedPrice + catalog[rightItem].discountedPrice - bestOffer.discount).toFixed(2);
       bestOfferSumWithoutDiscount.innerHTML = '£' + (catalog[leftItem].discountedPrice + catalog[rightItem].discountedPrice).toFixed(2);
@@ -227,6 +352,10 @@ function fillBestOfferSection(leftItem, rightItem) {
       bestOfferSumWithDiscount.innerHTML = '£' + (catalog[leftItem].discountedPrice + catalog[rightItem].discountedPrice).toFixed(2);
       bestOfferSumWithoutDiscount.innerHTML = '';
     }
+  }
+
+  function addToBag() {
+    document.location = '4_shopping_bag.html';
   }
 }
 

@@ -1,11 +1,45 @@
 var catalogItemsWrapper = document.getElementById('section_catalog_items_wrapper');
 var newCatalog = catalog.slice();
+var totalPriceSpan = document.getElementById('bag_total_price');
+var totalItemsSpan = document.getElementById('bag_total_items');
+var tempId;
+
+var bagTotalPrice;
+if (sessionStorage.price === undefined) {
+  bagTotalPrice = 0;
+} else {
+  bagTotalPrice = Number(sessionStorage.getItem('price'));
+}
+
+var bagTotalItems;
+if (sessionStorage.items === undefined) {
+  bagTotalItems = 0;
+} else {
+  bagTotalItems = Number(sessionStorage.getItem('items'));
+}
+
+totalItemsSpan.innerHTML = bagTotalItems;
+totalPriceSpan.innerHTML = '£' + bagTotalPrice.toFixed(2);
+if (bagTotalPrice === 0) {
+  totalPriceSpan.innerHTML = '';
+}
+
+var tempBag;
+if (sessionStorage.bag === undefined) {
+  tempBag = [];
+} else {
+  tempBag = JSON.parse(sessionStorage.getItem('bag'));
+}
 
 function addToCatalog(item) {
   var catalogItem = document.createElement('div');
   catalogItem.classList.add('section_catalog_item');
   catalogItemsWrapper.appendChild(catalogItem);
-  catalogItem.addEventListener('click', toItemDetailsPage);
+  catalogItem.addEventListener('click', function() {
+  	tempId = newCatalog[item].id;
+  	sessionStorage.setItem('id', tempId);
+  	toItemDetailsPage();
+  });
   catalogItem.style.order = item * 2;
   var catalogItemImgWrapper = document.createElement('div');
   catalogItemImgWrapper.classList.add('section_catalog_item_image_wrapper');
@@ -46,7 +80,7 @@ function addToCatalog(item) {
   }
 }
 
-function toItemDetailsPage() {
+function toItemDetailsPage() { 
   document.location = '3_item.html';
 }
 
@@ -67,7 +101,3 @@ function menuOpen() {
 }
 
 menuOpen();
-
-function addToBag() {
-  document.location = '4_shopping_bag.html';
-}
