@@ -46,7 +46,7 @@
 			<div class="container">
 				<div class="drop_list_wrapper">
 					<div class="drop_list">
-						<button type="button" class="drop_btn drop_btn_selected" id="drop_btn_fashion"><span class="drop_list_title">Fashion</span><span class="drop_list_item_picked" id="fashion_picked">Casual style</span></button>
+						<button type="button" class="drop_btn drop_btn_selected drop_btn_fashion"><span class="drop_list_title">Fashion</span><span class="drop_list_item_picked fashion_picked">Casual style</span></button>
 						<ul class="drop_list_content">
 							<li class="drop_list_item fashion_item">Not selected</li>
 							<li class="drop_list_item fashion_item">Nail the 90s</li>
@@ -58,7 +58,7 @@
 						</ul>
 					</div>
 					<div class="drop_list">
-						<button type="button" class="drop_btn drop_btn_not_selected" id="drop_btn_product_type"><span class="drop_list_title">Product type</span><span class="drop_list_item_picked" id="product_type_picked"></span></button>
+						<button type="button" class="drop_btn drop_btn_not_selected drop_btn_product_type"><span class="drop_list_title">Product type</span><span class="drop_list_item_picked product_type_picked"></span></button>
 						<ul class="drop_list_content">
 							<li class="drop_list_item product_type_item">Not selected</li>
 							<li class="drop_list_item product_type_item">Coats & Jackets</li>
@@ -67,7 +67,7 @@
 						</ul>
 					</div>
 					<div class="drop_list">
-						<button type="button" class="drop_btn drop_btn_not_selected" id="drop_btn_color"><span class="drop_list_title">Color</span><span class="drop_list_item_picked" id="color_picked"></span></button>
+						<button type="button" class="drop_btn drop_btn_not_selected drop_btn_color"><span class="drop_list_title">Color</span><span class="drop_list_item_picked color_picked"></span></button>
 						<ul class="drop_list_content">
 							<li class="drop_list_item color_item">Not selected</li>
 							<li class="drop_list_item color_item">Black</li>
@@ -78,7 +78,7 @@
 						</ul>
 					</div>
 					<div class="drop_list">
-						<button type="button" class="drop_btn drop_btn_selected" id="drop_btn_brand"><span class="drop_list_title">Brand</span><span class="drop_list_item_picked" id="brand_picked">Antipodium</span></button>
+						<button type="button" class="drop_btn drop_btn_selected drop_btn_brand"><span class="drop_list_title">Brand</span><span class="drop_list_item_picked brand_picked">Antipodium</span></button>
 						<ul class="drop_list_content">
 							<li class="drop_list_item brand_item">Not selected</li>
 							<li class="drop_list_item brand_item">Chi Chi London</li>
@@ -89,7 +89,7 @@
 						</ul>
 					</div>
 					<div class="drop_list">
-						<button type="button" class="drop_btn drop_btn_selected" id="drop_btn_size"><span class="drop_list_title">Size</span><span class="drop_list_item_picked" id="size_picked">UK 18</span></button>
+						<button type="button" class="drop_btn drop_btn_selected drop_btn_size"><span class="drop_list_title">Size</span><span class="drop_list_item_picked size_picked">UK 18</span></button>
 						<ul class="drop_list_content">
 							<li class="drop_list_item size_item">Not selected</li>
 							<li class="drop_list_item size_item">UK 2</li>
@@ -103,9 +103,71 @@
 						</ul>
 					</div>
 					<div class="drop_list">
-						<button type="button" class="drop_btn drop_btn_not_selected" id="drop_btn_price"><span class="drop_list_title">Price range</span><span class="drop_list_item_picked" id="price_picked"></span></button>
+						<button type="button" class="drop_btn drop_btn_not_selected drop_btn_price"><span class="drop_list_title">Price range</span><span class="drop_list_item_picked price_picked"></span></button>
 						<ul class="drop_list_content">
 							<li class="drop_list_item price_item">Not selected</li>
+							<li class="drop_list_item price_item">To £99</li>
+							<li class="drop_list_item price_item">£100-£299</li>
+							<li class="drop_list_item price_item">From £300</li>
+						</ul>
+					</div>
+				</div>
+				<div id="drop_list_wrapper_tablet_mobile">
+					<div class="drop_list" id="drop_list_tablet_mobile">
+						<button type="button" class="drop_btn drop_btn_selected drop_btn_fashion"><span class="drop_list_title">Fashion</span><span class="drop_list_item_picked fashion_picked">Casual style</span></button>
+						<button type="button" class="drop_btn drop_btn_not_selected drop_btn_product_type"><span class="drop_list_title">Product type</span><span class="drop_list_item_picked product_type_picked"></span></button>
+						<button type="button" class="drop_btn drop_btn_not_selected drop_btn_color"><span class="drop_list_title">Color</span><span class="drop_list_item_picked color_picked"></span></button>
+						<button type="button" class="drop_btn drop_btn_selected drop_btn_brand"><span class="drop_list_title">Brand</span><span class="drop_list_item_picked brand_picked">Antipodium</span></button>
+						<button type="button" class="drop_btn drop_btn_selected drop_btn_size"><span class="drop_list_title">Size</span><span class="drop_list_item_picked size_picked">UK 18</span></button>
+						<button type="button" class="drop_btn drop_btn_not_selected drop_btn_price"><span class="drop_list_title">Price range</span><span class="drop_list_item_picked price_picked"></span></button>
+						<img src="img/list_close.png" id="drop_list_content_close">
+					</div>
+					<div class="border_separator"></div>
+					<div id="drop_list_content_wrapper">
+						<ul class="drop_list_content">Fashion
+							<li class="drop_list_item fashion_item">Not selected</li>
+							<li class="drop_list_item fashion_item">Nail the 90s</li>
+							<li class="drop_list_item fashion_item drop_list_item_selected">Casual style</li>
+							<li class="drop_list_item fashion_item">New Look</li>
+							<li class="drop_list_item fashion_item">Sport</li>
+							<li class="drop_list_item fashion_item">Vintage</li>
+							<li class="drop_list_item fashion_item">Classical style</li>
+						</ul>
+						<ul class="drop_list_content">Product type
+							<li class="drop_list_item product_type_item drop_list_item_not_selected">Not selected</li>
+							<li class="drop_list_item product_type_item">Coats & Jackets</li>
+							<li class="drop_list_item product_type_item">Dresses</li>
+							<li class="drop_list_item product_type_item">Jersey Tops</li>
+						</ul>
+						<ul class="drop_list_content">Color
+							<li class="drop_list_item color_item drop_list_item_not_selected">Not selected</li>
+							<li class="drop_list_item color_item">Black</li>
+							<li class="drop_list_item color_item">Blue</li>
+							<li class="drop_list_item color_item">Red</li>
+							<li class="drop_list_item color_item">Green</li>
+							<li class="drop_list_item color_item">Golden</li>
+						</ul>
+						<ul class="drop_list_content">Brand
+							<li class="drop_list_item brand_item">Not selected</li>
+							<li class="drop_list_item brand_item">Chi Chi London</li>
+							<li class="drop_list_item brand_item drop_list_item_selected">Antipodium</li>
+							<li class="drop_list_item brand_item">Adidas</li>
+							<li class="drop_list_item brand_item">New Balance</li>
+							<li class="drop_list_item brand_item">River Island</li>
+						</ul>
+						<ul class="drop_list_content">Size
+							<li class="drop_list_item size_item">Not selected</li>
+							<li class="drop_list_item size_item">UK 2</li>
+							<li class="drop_list_item size_item drop_list_item_selected">UK 18</li>
+							<li class="drop_list_item size_item">UK 18L</li>
+							<li class="drop_list_item size_item">UK 20</li>
+							<li class="drop_list_item size_item">UK 20L</li>
+							<li class="drop_list_item size_item">UK 20S</li>
+							<li class="drop_list_item size_item">UK 22S</li>
+							<li class="drop_list_item size_item">UK 22</li>
+						</ul>
+						<ul class="drop_list_content">Price range
+							<li class="drop_list_item price_item drop_list_item_not_selected">Not selected</li>
 							<li class="drop_list_item price_item">To £99</li>
 							<li class="drop_list_item price_item">£100-£299</li>
 							<li class="drop_list_item price_item">From £300</li>
